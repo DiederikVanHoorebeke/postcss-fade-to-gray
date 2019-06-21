@@ -8,20 +8,34 @@
 
 ```css
 .foo {
-    /* Input example */
+  color: #dae1e7;
+  background-color: #e3342f;
 }
 ```
 
 ```css
 .foo {
-  /* Output example */
+  color: #dfdfdf;
+  background-color: #6a6a6a;
 }
 ```
 
-## Usage
+## Example postcss.config.js
 
 ```js
-postcss([ require('postcss-fade-to-gray') ])
+module.exports = ({
+  options
+}) => ({
+  plugins: {
+    'postcss-import': {},
+    'autoprefixer': {},
+    'postcss-fade-to-gray': {
+      saturation: 0
+    },
+    'cssnano': {},
+  }
+})
 ```
 
-See [PostCSS] docs for examples for your environment.
+### Parameters
+**saturation**: 0 (default, max 100)

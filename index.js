@@ -37,7 +37,7 @@ module.exports = postcss.plugin('postcss-fade-to-gray', function(opts) {
       matches.forEach(function(color) {
 
         var col = hexToRgb(color);
-        if (result !== null) {
+        if (col !== null) {
           var gray = col.r * 0.3086 + col.g * 0.6094 + col.b * 0.0820;
 
           col.r = Math.round(col.r * sat + gray * (1 - sat));
